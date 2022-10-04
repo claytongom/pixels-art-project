@@ -1,0 +1,18 @@
+.color{
+border: solid 1px black;
+display: inline-block
+
+}
+
+#preto{
+    background-color: black;
+}
+
+
+#cinza{
+    background-color: grey;
+}
+
+#vermelho{
+    background-color: red;
+}
