@@ -2,17 +2,21 @@
 border: solid 1px black;
 display: inline-block
 
+
 }
 
-#preto{
+#black{
     background-color: black;
 }
 
-
-#cinza{
+#cor1{
     background-color: grey;
 }
 
-#vermelho{
+#cor2{
     background-color: red;
+}
+
+#cor3{
+    background-color: blue;
 }
