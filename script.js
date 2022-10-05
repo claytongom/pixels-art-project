@@ -54,6 +54,18 @@ function genPixelsBoard() {
 }
 genPixelsBoard();
 
+function select(event) {
+    const element = document.querySelector('.selected');
+    element.classList.remove('selected');
+    event.target.classList.add('selected');
+}
+
+black.addEventListener('click', select);
+cor1.addEventListener('click', select);
+cor2.addEventListener('click', select);
+cor3.addEventListener('click', select);
+
+
 
 
 
