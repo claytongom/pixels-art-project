@@ -4,6 +4,8 @@ const cor2 = document.getElementById('cor2');
 const cor3 = document.getElementById('cor3');
 const btnColors = document.getElementById('button-random-color');
 
+black.className = "color selected";
+
 btnColors.addEventListener('click', genColors);
 
 function generateColor() {
@@ -51,6 +53,8 @@ function genPixelsBoard() {
     }
 }
 genPixelsBoard();
+
+
 
 
 
