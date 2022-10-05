@@ -15,11 +15,29 @@ function generateColor() {
     }
     
     return color;
-    
+     
   }
+
+  if(localStorage.getItem('colorPalette') !== null){
+    let cores = JSON.parse(localStorage.getItem('colorPalette'))
+    cor1.style.backgroundColor = cores['cor1'];
+    cor2.style.backgroundColor = cores['cor2'];
+    cor3.style.backgroundColor = cores['cor3'];
+}
 
   function genColors () {
     cor1.style.backgroundColor = generateColor();
     cor2.style.backgroundColor = generateColor();
     cor3.style.backgroundColor = generateColor();
+
+    let colorObjects = { cor1: cor1.style.backgroundColor,
+                   cor2: cor2.style.backgroundColor,
+                   cor3: cor3.style.backgroundColor
+    }
+    localStorage.setItem('colorPalette', JSON.stringify(colorObjects));
 }
+
+
+
+
+
