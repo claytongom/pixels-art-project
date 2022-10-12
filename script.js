@@ -3,7 +3,7 @@ const cor1 = document.getElementById('cor1');
 const cor2 = document.getElementById('cor2');
 const cor3 = document.getElementById('cor3');
 const btnColors = document.getElementById('button-random-color');
-const buttonClear = document.getElementById("clear-board");
+
 
 black.className = "color selected";
 
@@ -36,11 +36,16 @@ function genColors() {
 }
 function genPixelsBoard() {
     let pixelsBoard = document.getElementById("pixel-board");
+    console.log(pixelsBoard)
     for (let i = 0; i < 25; i += 1) {
-        let pixelFrame = document.createElement("btn");
+        let pixelFrame = document.createElement("div");
         pixelFrame.className = "pixel";
-        pixelFrame.style.backgroundColor = "white";
+        pixelFrame.style.backgroundColor = "rgb(255, 255, 255)";
+        pixelFrame.style.height = "40px";
+        pixelFrame.style.width = "40px";
+        pixelFrame.style.border = "1px solid black"
         pixelFrame.style.display = "inline-block";
+        console.log(pixelFrame.style.backgroundColor)
         pixelsBoard.appendChild(pixelFrame);
     }
 }
@@ -57,16 +62,28 @@ cor1.addEventListener('click', select);
 cor2.addEventListener('click', select);
 cor3.addEventListener('click', select);
 
+function squarePaint (event) {
+    if (event.target.classList.contains("pixel")) {
+          let selectColor = document.querySelector('.selected');
+          let paint = window.getComputedStyle(selectColor); //ref.: https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
+          event.target.style.backgroundColor = (paint.backgroundColor);
+        }
+  };
+  
+  document.addEventListener("click", squarePaint);
 
-function squareClear(event) {
-    const square = document.querySelectorAll('.pixel');
-    for(let i = 0; i < square.length; i += 1){
-        square[i].style.backgroundColor = 'white';
-    }
+
+const buttonClear = document.getElementById("clear-board");
+function squareClear() {
+   const square = document.getElementsByClassName('pixel');
+   console.log("test", square.length)
+   for(let i = 0; i < square.length; i += 1){
+      square[i].style.backgroundColor = "rgb(255, 255, 255)"
+   }
 
 }
-buttonClear.addEventListener('click', squareClear);
 
+buttonClear.addEventListener('click', squareClear);
 
 
 
